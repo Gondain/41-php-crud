@@ -33,25 +33,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
-
+<div class='center'>
 <h1>User subscription</h1>
 
     <form method="post" action="subscription.php">
-        <div>
+        <div class='login'>
             <label for="login">Login :</label>
             <input type="text" name="login" required>
         </div>
-        <div>
+        <div class='login'>
             <label for="email">Email :</label>
             <input type="email" name="email" required>
         </div>
-        <div>
+        <div class='login'>
             <label for="pass">Password :</label>
-            <input type="password" name="pass" required>
+            <input type="password" name="pass" class='pwd' required>
         </div>
-        <button type="submit">Subscribe</button>
+        <button type="submit" class='boutton'>Subscribe</button>
     </form>
-
+</div>
 
 
 <?php

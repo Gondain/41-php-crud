@@ -5,7 +5,7 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 // open the $_SESSION
-
+session_start();
 // 1. Check all the inputs exist
 // 2. We check also if the $_POST are not empty because we load the page, the form is empty
 if($_SERVER["REQUEST_METHOD"] === "POST" 
@@ -57,19 +57,26 @@ include "includes/header.php";
 
 ?>
 
-
+<div class='center'>
 <h1>Add a new student:</h1>
 
     <form method="post" action="create.php">
+      <div class='login'>
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" required> <br>
+      </div>
+      <div class='login'>
         <label for="location">Location:</label>
         <input type="text" name="location" id="location" required> <br>
+      </div>
+      <div class='login'>
         <label for="selection">Selection:</label>
-        <input type="text" name="selection" id="selection" required> <br>
-        <button type="submit">Send</button>
+        <input type="text" name="selection" id="selection" class='pwd' required> <br>
+      </div>
+        
+        <button type="submit" class='boutton'>Send</button>
     </form>
-
+<div>
 
 
 <?php

@@ -56,18 +56,31 @@ if($_SERVER["REQUEST_METHOD"] === "POST"
     exit;
 }
 
+include "includes/header.php";
+
 ?>
 
-<h1>Edit this student:</h1>
+
+
+<div class='center'>
+    <h1>Edit this student:</h1>
 
     <form method="post" action="edit.php?id=<?= htmlspecialchars($id) ?>">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" value="<?= htmlspecialchars($student['name']) ?>" required> <br>
-        <label for="location">Location:</label>
-        <input type="text" name="location" id="location" value="<?= htmlspecialchars($student['location']) ?>" required> <br>
-        <label for="selection">Selection:</label>
-        <input type="text" name="selection" id="selection" value="<?= htmlspecialchars($student['selection']) ?>" required> <br>
-        <button type="submit">Edit</button>
+        <div class='login'>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="<?= htmlspecialchars($student['name']) ?>" required> <br> 
+        </div>
+        <div class='login'>
+            <label for="location">Location:</label>
+            <input type="text" name="location" id="location" value="<?= htmlspecialchars($student['location']) ?>" required> <br>
+        </div>
+        <div class='login'>
+            <label for="selection">Selection:</label>
+            <input type="text" class="pwd" name="selection" id="selection" value="<?= htmlspecialchars($student['selection']) ?>" required> <br>
+        </div>
+        <button class="boutton" type="submit">Edit</button>
     </form>
+</div>
+
 
 <?php include "includes/footer.php";?>

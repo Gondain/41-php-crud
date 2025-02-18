@@ -1,2 +1,2 @@
-<footer>This is the footer</footer>
+<footer></footer>
 </html>
