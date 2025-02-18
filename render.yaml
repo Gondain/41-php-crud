@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: php-app
+    env: docker
+    repo: https://github.com/Gondain/41-php-crud.git
+    plan: free
+    region: frankfurt
+    rootDir: /
+    dockerfilePath: Dockerfile
+    autoDeploy: true
