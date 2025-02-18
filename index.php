@@ -13,7 +13,7 @@ require_once "connexion.php";
 // Interact with the database
 try {
   // 1. We can use a direct query, because we admit we will not use data from "outside" (GET or POST)
-  $statement = $db->query("//Your query here");
+  $statement = $db->query("SELECT * FROM student");
 
 } catch (PDOException $e) {
   // We catch the error from PDO
@@ -22,8 +22,7 @@ try {
 }
 
 // 2. We store the datas from the DB in an Associative Array
-$variable = $statement->fetchAll(PDO::FETCH_ASSOC);
-
+$students = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 include "includes/header.php";
 ?>
@@ -34,11 +33,11 @@ include "includes/header.php";
     <ol>
         <?php
             //display the datas
-            foreach() : ?>
-
+            foreach($students as $student) : ?>
+                
             <li>
-                <a href="">
-                    <h3><?= ?></h3>
+                <a href="single.php?id=<?=$student['id']?>">
+                    <h3><?=$student['name']?></h3>
                 </a>
             </li>
 

@@ -19,15 +19,15 @@ if(isset($_GET['id'])) {
 
   // Interact with the database
   try {
-    require_once "connexion.php";
     //1. Prepare the query
-    $statement = $db->prepare("//Your query here");
+    $statement = $db->prepare("SELECT * FROM student WHERE id = :id");
 
     //2. BindParam
-
+    $statement->bindParam(':id', $_GET['id'],PDO::PARAM_INT);
     //3. Execute
-
+    $statement->execute();
     //4. Store data in a $variable
+    $student = $statement->fetch(PDO::FETCH_ASSOC);
 
   } catch (PDOException $e) {
     // We catch the error from PDO
@@ -41,11 +41,9 @@ include "includes/header.php";
 
 ?>
 
-
-<h1>Single post</h1>
-
-
-
+<h1><?=$student['name']?></h1>
+<p>Campus: <?=$student['location']?></p>
+<p>Sélection: <?=$student['selection']?></p>
 
 <?php
     include "includes/footer.php";
