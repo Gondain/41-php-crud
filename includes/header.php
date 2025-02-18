@@ -13,6 +13,8 @@
         <ul>
             <li class="home"><a href="./">Home</a></li>
             <li class="create"><a href="create.php">Add student</a></li>
+            <li><a href="subscription.php">Register</a></li>
+            <li><a href="login.php">Login</a></li>
         </ul>
     </nav>
 </header>

@@ -44,6 +44,13 @@ include "includes/header.php";
 <h1><?=$student['name']?></h1>
 <p>Campus: <?=$student['location']?></p>
 <p>Sélection: <?=$student['selection']?></p>
+<a href="edit.php?id=<?=$student['id']?>"><button >Edit</button></a>
+<form action="delete.php" method="post" style="display:inline;">
+<input type="hidden" name="id" value="<?=$student['id']?>">
+    <button type="submit" onclick="return confirm('Voulez-vous vraiment supprimer cet étudiant ?');">
+        Delete
+    </button>
+</form>
 
 <?php
     include "includes/footer.php";
